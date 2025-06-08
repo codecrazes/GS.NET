@@ -1,0 +1,160 @@
+# Subindo a imagem no Docker Hub
+
+docker login
+
+docker build -t gsnet:latest .
+
+docker tag gsnet:latest docker.io/luish3nrique/fiap:gsnet
+
+docker push docker.io/luish3nrique/fiap:gsnet
+
+# Criação da VM
+
+az login
+
+az group create \
+  --name gsnetgroup \
+  --location eastus2
+
+az vm create \
+  --resource-group gsnetgroup \
+  --name gsnet \
+  --location eastus2 \
+  --image Ubuntu2204 \
+  --size Standard_B1s \
+  --admin-username azureuser \
+  --no-wait
+
+az vm list-ip-addresses \
+  --resource-group gsnetgroup \
+  --name gsnet \
+  --output table
+
+az vm open-port \
+  --resource-group gsnetgroup \
+  --name gsnet \
+  --port 8080 \
+  --priority 1010
+
+ssh-keygen -t rsa -b 4096 -f ~/.ssh/gsnet -N ""
+
+az vm user update \
+  --resource-group gsnetgroup \
+  --name gsnet \
+  --username azureuser \
+  --ssh-key-value "$(tr -d '\n' < ~/.ssh/gsnet.pub)"
+
+# Conectando e configurando a VM
+
+ssh -i ~/.ssh/gsnet azureuser@172.206.81.227 
+
+sudo apt update
+
+sudo apt install -y docker.io
+
+sudo systemctl enable --now docker
+
+# Subindo os containers da aplicação e banco
+
+sudo docker login
+
+sudo docker network create gsprojeto-network
+
+sudo docker run -d \
+  --name gsprojetosocial-mysql \
+  --network gsprojeto-network \
+  -e MYSQL_ROOT_PASSWORD=LzHUHwRyjo \
+  -e MYSQL_DATABASE=GsProjetoSocialDB \
+  -v gsprojetosocial-mysql-data:/var/lib/mysql \
+  -p 3306:3306 \
+  mysql:8.0
+
+sudo docker pull docker.io/luish3nrique/fiap:gsnet
+
+sudo docker run -d \
+  --name gsnet \
+  --network gsprojeto-network \
+  -p 8080:8080 \
+  docker.io/luish3nrique/fiap:gsnet
+
+# Verificanco a persistencia de dados
+
+docker exec -it gsprojetosocial-mysql mysql -u root -p
+
+USE GsProjetoSocialDB;
+
+show TABLES
+
+SELECT * FROM FormulariosFamilia
+
+# Curls utilizados nos testes
+
+curl -X 'GET' \
+  'http://localhost:8080/api/FormularioFamilia' \
+  -H 'accept: */*'
+
+curl -X 'POST' \
+  'http://localhost:8080/api/FormularioFamilia' \
+  -H 'accept: */*' \
+  -H 'Content-Type: application/json' \
+  -d '{
+  "fullName": "Luis Henrique Gomes Cardoso",
+  "cpf": "578.419.088-14",
+  "phone": "(11)97282-5931",
+  "address": {
+    "street": "Rua Delfim Moreira",
+    "number": "100",
+    "neighborhood": "Jardim Presidente Kenndy",
+    "city": "Embu das Artes",
+    "state": "São Paulo",
+    "zipCode": "06820130",
+    "referencePoint": "casa"
+  },
+  "hasDisability": true,
+  "disabilityType": "TDAH",
+  "householdCount": 5,
+  "childrenCount": 2,
+  "hasPets": true,
+  "animals": [
+    {
+      "name": "Caramelo",
+      "type": "cachorro",
+      "needsVeterinaryHelp": true
+    }
+  ]
+}'
+
+curl -X 'GET' \
+  'http://localhost:8080/api/FormularioFamilia/1' \
+  -H 'accept: */*'
+
+curl -X 'PUT' \
+  'http://localhost:8080/api/FormularioFamilia/1' \
+  -H 'accept: */*' \
+  -H 'Content-Type: application/json' \
+  -d '{
+  "id": 1,
+  "fullName": "Luis Henrique Gomes Cardoso",
+  "cpf": "578.419.088-14",
+  "phone": "(11)97282-5931",
+  "address": {
+    "id": 1,
+    "street": "Rua Delfim Moreira",
+    "number": "100",
+    "neighborhood": "Jardim Presidente Kenndy",
+    "city": "Embu das Artes",
+    "state": "São Paulo",
+    "zipCode": "06820130",
+    "referencePoint": "casa"
+  },
+  "hasDisability": true,
+  "disabilityType": "TDAH",
+  "householdCount": 5,
+  "childrenCount": 2,
+  "hasPets": false,
+  "animals": []
+}'
+
+curl -X 'DELETE' \
+  'http://localhost:8080/api/FormularioFamilia/1' \
+  -H 'accept: */*'
