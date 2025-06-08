@@ -17,7 +17,7 @@ A iniciativa busca mapear e prestar assistência a:
 - Famílias com animais
 - Famílias em situação de vulnerabilidade
 
-Além disso, oferece um **formulário para cadastro de voluntários**, permitindo que mais pessoas contribuam com a causa.
+Além disso, oferece um **formulário para cadastro de voluntários**, permitindo que mais pessoas contribuam com a nossa causa.
 
 ## 🛠️ Tecnologias Utilizadas
 
