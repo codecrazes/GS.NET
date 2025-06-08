@@ -7,6 +7,7 @@ Enzo de Moura Silva — RM: 556532
 
 Luis Henrique Gomes Cardoso — RM: 558883
 
+
 Este projeto tem como objetivo **ajudar famílias afetadas por desastres naturais**, principalmente **danos causados pela chuva no Brasil** e **necessidades enfrentadas no período de frio**.
 
 A iniciativa busca mapear e prestar assistência a:
@@ -52,3 +53,84 @@ dotnet ef database update
 ```bash
 dotnet run
 ```
+
+Os comandos abaixo foram utilizados para testar os endpoints da API FormularioFamilia.
+# 🔍 Listar todas as famílias
+curl -X 'GET' \
+  'http://localhost:8080/api/FormularioFamilia' \
+  -H 'accept: */*'
+
+
+# ➕ Cadastrar nova família
+curl -X 'POST' \
+  'http://localhost:8080/api/FormularioFamilia' \
+  -H 'accept: */*' \
+  -H 'Content-Type: application/json' \
+  -d '{
+    "fullName": "João da Silva",
+    "cpf": "123.456.789-00",
+    "phone": "(11)91234-5678",
+    "address": {
+      "street": "Rua Exemplo",
+      "number": "123",
+      "neighborhood": "Bairro Central",
+      "city": "Cidade Exemplo",
+      "state": "Estado Exemplo",
+      "zipCode": "00000000",
+      "referencePoint": "Perto da praça"
+    },
+    "hasDisability": true,
+    "disabilityType": "Visual",
+    "householdCount": 4,
+    "childrenCount": 2,
+    "hasPets": true,
+    "animals": [
+      {
+        "name": "Rex",
+        "type": "cachorro",
+        "needsVeterinaryHelp": true
+      }
+    ]
+  }'
+
+
+# 🔎 Buscar família por ID
+curl -X 'GET' \
+  'http://localhost:8080/api/FormularioFamilia/1' \
+  -H 'accept: */*'
+
+
+# 🔄 Atualizar família existente
+curl -X 'PUT' \
+  'http://localhost:8080/api/FormularioFamilia/1' \
+  -H 'accept: */*' \
+  -H 'Content-Type: application/json' \
+  -d '{
+    "id": 1,
+    "fullName": "João da Silva",
+    "cpf": "123.456.789-00",
+    "phone": "(11)91234-5678",
+    "address": {
+      "id": 1,
+      "street": "Rua Exemplo",
+      "number": "123",
+      "neighborhood": "Bairro Central",
+      "city": "Cidade Exemplo",
+      "state": "Estado Exemplo",
+      "zipCode": "00000000",
+      "referencePoint": "Perto da praça"
+    },
+    "hasDisability": true,
+    "disabilityType": "Visual",
+    "householdCount": 4,
+    "childrenCount": 2,
+    "hasPets": false,
+    "animals": []
+  }'
+
+
+# ❌ Deletar família por ID
+curl -X 'DELETE' \
+  'http://localhost:8080/api/FormularioFamilia/1' \
+  -H 'accept: */*'
+
