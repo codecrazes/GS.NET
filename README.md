@@ -1,12 +1,14 @@
 # 🌧️ Projeto Social
 
-👥 Integrantes
-Caroline Assis Silva — RM: 557596
+---
 
-Enzo de Moura Silva — RM: 556532
+## 👨‍💻 Integrantes
 
-Luis Henrique Gomes Cardoso — RM: 558883
+- Caroline Assis Silva - RM 557596  
+- Enzo de Moura Silva - RM 556532  
+- Luis Henrique Gomes Cardoso - RM 558883  
 
+---
 
 Este projeto tem como objetivo **ajudar famílias afetadas por desastres naturais**, principalmente **danos causados pela chuva no Brasil** e **necessidades enfrentadas no período de frio**.
 
@@ -56,56 +58,53 @@ dotnet run
 
 Os comandos abaixo foram utilizados para testar os endpoints da API FormularioFamilia.
 # 🔍 Listar todas as famílias
-curl -X 'GET' \
-  'http://localhost:8080/api/FormularioFamilia' \
-  -H 'accept: */*'
+curl -X 'GET' 
+  'http://localhost:8080/api/FormularioFamilia' 
 
 
 # ➕ Cadastrar nova família
 curl -X 'POST' \
-  'http://localhost:8080/api/FormularioFamilia' \
-  -H 'accept: */*' \
-  -H 'Content-Type: application/json' \
-  -d '{
-    "fullName": "João da Silva",
-    "cpf": "123.456.789-00",
-    "phone": "(11)91234-5678",
-    "address": {
-      "street": "Rua Exemplo",
-      "number": "123",
-      "neighborhood": "Bairro Central",
-      "city": "Cidade Exemplo",
-      "state": "Estado Exemplo",
-      "zipCode": "00000000",
-      "referencePoint": "Perto da praça"
-    },
-    "hasDisability": true,
-    "disabilityType": "Visual",
-    "householdCount": 4,
-    "childrenCount": 2,
-    "hasPets": true,
-    "animals": [
-      {
-        "name": "Rex",
-        "type": "cachorro",
-        "needsVeterinaryHelp": true
-      }
-    ]
-  }'
+  'http://localhost:8080/api/FormularioFamilia'
 
+```json
+{
+  "fullName": "João da Silva",
+  "cpf": "123.456.789-00",
+  "phone": "(11)91234-5678",
+  "address": {
+    "street": "Rua Exemplo",
+    "number": "123",
+    "neighborhood": "Bairro Central",
+    "city": "Cidade Exemplo",
+    "state": "Estado Exemplo",
+    "zipCode": "00000000",
+    "referencePoint": "Perto da praça"
+  },
+  "hasDisability": true,
+  "disabilityType": "Visual",
+  "householdCount": 4,
+  "childrenCount": 2,
+  "hasPets": true,
+  "animals": [
+    {
+      "name": "Rex",
+      "type": "cachorro",
+      "needsVeterinaryHelp": true
+    }
+  ]
+}
+
+```
 
 # 🔎 Buscar família por ID
 curl -X 'GET' \
-  'http://localhost:8080/api/FormularioFamilia/1' \
-  -H 'accept: */*'
+  'http://localhost:8080/api/FormularioFamilia/1' 
 
 
 # 🔄 Atualizar família existente
-curl -X 'PUT' \
-  'http://localhost:8080/api/FormularioFamilia/1' \
-  -H 'accept: */*' \
-  -H 'Content-Type: application/json' \
-  -d '{
+  'http://localhost:8080/api/FormularioFamilia/1' 
+  ```json
+{
     "id": 1,
     "fullName": "João da Silva",
     "cpf": "123.456.789-00",
@@ -127,10 +126,10 @@ curl -X 'PUT' \
     "hasPets": false,
     "animals": []
   }'
-
+  ```
 
 # ❌ Deletar família por ID
-curl -X 'DELETE' \
-  'http://localhost:8080/api/FormularioFamilia/1' \
-  -H 'accept: */*'
+curl -X 'DELETE' 
+  'http://localhost:8080/api/FormularioFamilia/1' 
+
 
