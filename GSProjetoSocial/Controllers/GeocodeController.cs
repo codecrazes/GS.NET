@@ -3,6 +3,7 @@ using System.Text.Json;
 using System.Web;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
+using System.Text.Json.Serialization;
 
 namespace GSProjetoSocial.Controllers
 {
@@ -47,7 +48,10 @@ namespace GSProjetoSocial.Controllers
 
     public class NominatimResult
     {
+        [JsonPropertyName("lat")]
         public string Lat { get; set; }
+
+        [JsonPropertyName("lon")]
         public string Lon { get; set; }
     }
 }
