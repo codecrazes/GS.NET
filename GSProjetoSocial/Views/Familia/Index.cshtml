@@ -1,0 +1,38 @@
+@model IEnumerable<GSProjetoSocial.Models.FormularioFamilia>
+@{
+    ViewData["Title"] = "Famílias";
+}
+<h2>Famílias Cadastradas</h2>
+<a class="btn btn-primary mb-3" asp-action="Create">Nova Família</a>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Nome</th>
+            <th>CPF</th>
+            <th>Telefone</th>
+            <th>Rua</th>
+            <th>Bairro</th>
+            <th>Cidade</th>
+            <th>Estado</th>
+            <th>Ações</th>
+        </tr>
+    </thead>
+    <tbody>
+    @foreach(var f in Model)
+    {
+        <tr>
+            <td>@f.NomeCompleto</td>
+            <td>@f.Cpf</td>
+            <td>@f.Telefone</td>
+            <td>@f.Endereco.Rua</td>
+            <td>@f.Endereco.Bairro</td>
+            <td>@f.Endereco.Cidade</td>
+            <td>@f.Endereco.Estado</td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@f.Id" class="btn btn-sm btn-secondary">Editar</a>
+                <a asp-action="Delete" asp-route-id="@f.Id" class="btn btn-sm btn-danger">Excluir</a>
+            </td>
+        </tr>
+    }
+    </tbody>
+</table>

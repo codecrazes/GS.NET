@@ -1,35 +1,37 @@
-﻿@model GSProjetoSocial.Models.Voluntario
-
-@{
+﻿@{
     ViewData["Title"] = "Página Inicial";
+    Layout = "_Layout";
 }
-
-<div class="text-center">
-    <h1 class="display-4">Projeto Social - Ajuda em Desastres Naturais</h1>
-    <p>Este sistema foi desenvolvido para auxiliar famílias e voluntários afetados por desastres naturais, como enchentes, oferecendo apoio, cadastro e organização.</p>
-
-    <div class="mt-4">
-        <a asp-controller="FormularioFamilia" asp-action="Index" class="btn btn-primary m-2">Cadastro de Famílias</a>
-        <a asp-controller="Voluntario" asp-action="Index" class="btn btn-success m-2">Cadastro de Voluntários</a>
-        <a asp-controller="Relato" asp-action="Index" class="btn btn-warning m-2">Relatos</a>
+<div class="text-center mb-5">
+    <h1 class="display-4">RedeSOS</h1>
+    <p class="lead">Auxiliamos famílias e voluntários afetados por desastres naturais.</p>
+</div>
+<div class="row g-4">
+    <div class="col-sm-6 col-lg-4">
+        <div class="card h-100 shadow-sm border-0">
+            <div class="card-body d-flex flex-column">
+                <h5 class="card-title">Famílias</h5>
+                <p class="card-text flex-grow-1">Gerencie o cadastro de famílias afetadas.</p>
+                <a asp-controller="Familia" asp-action="Index" class="btn btn-outline-primary mt-3">Ver Famílias</a>
+            </div>
+        </div>
     </div>
-
-    <hr />
-
-    <h3>Quer se tornar um voluntário?</h3>
-    <form asp-controller="Voluntario" asp-action="Cadastrar" method="post" class="mt-3">
-        <div class="form-group">
-            <label asp-for="NomeCompleto">Nome Completo</label>
-            <input asp-for="NomeCompleto" class="form-control" />
+    <div class="col-sm-6 col-lg-4">
+        <div class="card h-100 shadow-sm border-0">
+            <div class="card-body d-flex flex-column">
+                <h5 class="card-title">Geocode</h5>
+                <p class="card-text flex-grow-1">Buscar coordenadas de um endereço.</p>
+                <a asp-controller="GeocodeMvc" asp-action="Index" class="btn btn-outline-dark mt-3">Geocode</a>
+            </div>
         </div>
-        <div class="form-group">
-            <label asp-for="Telefone">Telefone</label>
-            <input asp-for="Telefone" class="form-control" />
+    </div>
+    <div class="col-sm-6 col-lg-4">
+        <div class="card h-100 shadow-sm border-0">
+            <div class="card-body d-flex flex-column">
+                <h5 class="card-title">Consulta CEP</h5>
+                <p class="card-text flex-grow-1">Buscar endereço via CEP.</p>
+                <a asp-controller="AddressMvc" asp-action="Index" class="btn btn-outline-primary mt-3">Consulta CEP</a>
+            </div>
         </div>
-        <div class="form-group">
-            <label asp-for="TipoAjuda">Tipo de Ajuda</label>
-            <input asp-for="TipoAjuda" class="form-control" />
-        </div>
-        <button type="submit" class="btn btn-dark mt-2">Enviar</button>
-    </form>
+    </div>
 </div>

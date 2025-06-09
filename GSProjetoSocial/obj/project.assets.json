@@ -2988,11 +2988,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/luis.cardoso/Documents/GSProjetoSocial/GSProjetoSocial/GSProjetoSocial.csproj",
+      "projectUniqueName": "/Users/luis.cardoso/Documents/GS.NET/GSProjetoSocial/GSProjetoSocial.csproj",
       "projectName": "GSProjetoSocial",
-      "projectPath": "/Users/luis.cardoso/Documents/GSProjetoSocial/GSProjetoSocial/GSProjetoSocial.csproj",
+      "projectPath": "/Users/luis.cardoso/Documents/GS.NET/GSProjetoSocial/GSProjetoSocial.csproj",
       "packagesPath": "/Users/luis.cardoso/.nuget/packages/",
-      "outputPath": "/Users/luis.cardoso/Documents/GSProjetoSocial/GSProjetoSocial/obj/",
+      "outputPath": "/Users/luis.cardoso/Documents/GS.NET/GSProjetoSocial/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/Users/luis.cardoso/.nuget/NuGet/NuGet.Config"

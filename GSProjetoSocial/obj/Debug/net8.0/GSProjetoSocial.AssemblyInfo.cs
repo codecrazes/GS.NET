@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("GSProjetoSocial")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+bcb9f64cbaa998d8369a805df8e012e9f495d6a4")]
 [assembly: System.Reflection.AssemblyProductAttribute("GSProjetoSocial")]
 [assembly: System.Reflection.AssemblyTitleAttribute("GSProjetoSocial")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

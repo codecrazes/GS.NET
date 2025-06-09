@@ -1,0 +1,30 @@
+@{
+    ViewData["Title"] = "Geocode";
+    Layout = "_Layout";
+}
+<h2>@ViewData["Title"]</h2>
+<form asp-action="Index" method="post">
+    <div class="mb-3">
+        <label for="address" class="form-label">Endereço</label>
+        <input type="text" name="address" id="address" class="form-control" />
+    </div>
+    <button type="submit" class="btn btn-primary">Buscar Coordenadas</button>
+</form>
+
+@if (ViewData.ModelState.ErrorCount > 0)
+{
+    <div class="text-danger mt-3">
+        @foreach (var err in ViewData.ModelState.Values.SelectMany(v => v.Errors))
+        {
+            <p>@err.ErrorMessage</p>
+        }
+    </div>
+}
+else if (ViewData["Lat"] != null)
+{
+    <div class="mt-4">
+        <h5>Coordenadas para: @ViewData["Address"]</h5>
+        <p><strong>Latitude:</strong> @ViewData["Lat"]</p>
+        <p><strong>Longitude:</strong> @ViewData["Lon"]</p>
+    </div>
+}

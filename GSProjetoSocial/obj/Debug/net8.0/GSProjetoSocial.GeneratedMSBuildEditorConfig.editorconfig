@@ -9,41 +9,65 @@ build_property.EnforceExtendedAnalyzerRules =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = GSProjetoSocial
 build_property.RootNamespace = GSProjetoSocial
-build_property.ProjectDir = /Users/luis.cardoso/Documents/GSProjetoSocial/GSProjetoSocial/
+build_property.ProjectDir = /Users/luis.cardoso/Documents/GS.NET/GSProjetoSocial/
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
 build_property.RazorLangVersion = 8.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = /Users/luis.cardoso/Documents/GSProjetoSocial/GSProjetoSocial
+build_property.MSBuildProjectDirectory = /Users/luis.cardoso/Documents/GS.NET/GSProjetoSocial
 build_property._RazorSourceGeneratorDebug = 
 build_property.EffectiveAnalysisLevelStyle = 8.0
 build_property.EnableCodeStyleSeverity = 
 
-[/Users/luis.cardoso/Documents/GSProjetoSocial/GSProjetoSocial/Views/Home/Index.cshtml]
+[/Users/luis.cardoso/Documents/GS.NET/GSProjetoSocial/Views/AddressMvc/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQWRkcmVzc012Yy9JbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/luis.cardoso/Documents/GS.NET/GSProjetoSocial/Views/Familia/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvRmFtaWxpYS9DcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/luis.cardoso/Documents/GS.NET/GSProjetoSocial/Views/Familia/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvRmFtaWxpYS9EZWxldGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/luis.cardoso/Documents/GS.NET/GSProjetoSocial/Views/Familia/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvRmFtaWxpYS9FZGl0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/luis.cardoso/Documents/GS.NET/GSProjetoSocial/Views/Familia/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvRmFtaWxpYS9JbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/luis.cardoso/Documents/GS.NET/GSProjetoSocial/Views/GeocodeMvc/index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvR2VvY29kZU12Yy9pbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/luis.cardoso/Documents/GS.NET/GSProjetoSocial/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvSG9tZS9JbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/luis.cardoso/Documents/GSProjetoSocial/GSProjetoSocial/Views/Home/Privacy.cshtml]
+[/Users/luis.cardoso/Documents/GS.NET/GSProjetoSocial/Views/Home/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvSG9tZS9Qcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/luis.cardoso/Documents/GSProjetoSocial/GSProjetoSocial/Views/Shared/Error.cshtml]
+[/Users/luis.cardoso/Documents/GS.NET/GSProjetoSocial/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2hhcmVkL0Vycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/luis.cardoso/Documents/GSProjetoSocial/GSProjetoSocial/Views/Shared/_ValidationScriptsPartial.cshtml]
+[/Users/luis.cardoso/Documents/GS.NET/GSProjetoSocial/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2hhcmVkL19WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/luis.cardoso/Documents/GSProjetoSocial/GSProjetoSocial/Views/_ViewImports.cshtml]
+[/Users/luis.cardoso/Documents/GS.NET/GSProjetoSocial/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/luis.cardoso/Documents/GSProjetoSocial/GSProjetoSocial/Views/_ViewStart.cshtml]
+[/Users/luis.cardoso/Documents/GS.NET/GSProjetoSocial/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/luis.cardoso/Documents/GSProjetoSocial/GSProjetoSocial/Views/Shared/_Layout.cshtml]
+[/Users/luis.cardoso/Documents/GS.NET/GSProjetoSocial/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2hhcmVkL19MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-tj9uhyllsy

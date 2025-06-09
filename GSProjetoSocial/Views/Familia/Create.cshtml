@@ -1,0 +1,39 @@
+@model GSProjetoSocial.Models.FormularioFamilia
+@{
+    ViewData["Title"] = "Nova Família";
+}
+<h2>@ViewData["Title"]</h2>
+<form asp-action="Create">
+    <div class="mb-3">
+        <label asp-for="NomeCompleto" class="form-label"></label>
+        <input asp-for="NomeCompleto" class="form-control" />
+    </div>
+    <div class="mb-3">
+        <label asp-for="Cpf" class="form-label"></label>
+        <input asp-for="Cpf" class="form-control" />
+    </div>
+    <div class="mb-3">
+        <label asp-for="Telefone" class="form-label"></label>
+        <input asp-for="Telefone" class="form-control" />
+    </div>
+    <fieldset class="border p-3 mb-3">
+        <legend class="w-auto">Endereço</legend>
+        <div class="mb-3">
+            <label asp-for="Endereco.Rua" class="form-label"></label>
+            <input asp-for="Endereco.Rua" class="form-control" />
+        </div>
+        <div class="mb-3">
+            <label asp-for="Endereco.Bairro" class="form-label"></label>
+            <input asp-for="Endereco.Bairro" class="form-control" />
+        </div>
+        <div class="mb-3">
+            <label asp-for="Endereco.Cidade" class="form-label"></label>
+            <input asp-for="Endereco.Cidade" class="form-control" />
+        </div>
+        <div class="mb-3">
+            <label asp-for="Endereco.Estado" class="form-label"></label>
+            <input asp-for="Endereco.Estado" class="form-control" />
+        </div>
+    </fieldset>
+    <button type="submit" class="btn btn-primary">Salvar</button>
+</form>

@@ -1,0 +1,41 @@
+@model GSProjetoSocial.Models.FormularioFamilia
+@{
+    ViewData["Title"] = "Excluir Família";
+}
+<h2>@ViewData["Title"]</h2>
+<div class="mb-3">
+    <label class="form-label">Nome Completo</label>
+    <p class="form-control-plaintext">@Model.NomeCompleto</p>
+</div>
+<div class="mb-3">
+    <label class="form-label">CPF</label>
+    <p class="form-control-plaintext">@Model.Cpf</p>
+</div>
+<div class="mb-3">
+    <label class="form-label">Telefone</label>
+    <p class="form-control-plaintext">@Model.Telefone</p>
+</div>
+<fieldset class="border p-3 mb-3">
+    <legend class="w-auto">Endereço</legend>
+    <div class="mb-3">
+        <label class="form-label">Rua</label>
+        <p class="form-control-plaintext">@Model.Endereco.Rua</p>
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Bairro</label>
+        <p class="form-control-plaintext">@Model.Endereco.Bairro</p>
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Cidade</label>
+        <p class="form-control-plaintext">@Model.Endereco.Cidade</p>
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Estado</label>
+        <p class="form-control-plaintext">@Model.Endereco.Estado</p>
+    </div>
+</fieldset>
+<form asp-action="Delete">
+    <input type="hidden" asp-for="Id" />
+    <button type="submit" class="btn btn-danger">Excluir</button>
+    <a asp-action="Index" class="btn btn-secondary">Cancelar</a>
+</form>
